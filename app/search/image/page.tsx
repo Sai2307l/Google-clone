@@ -2,9 +2,9 @@
 
 import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/search/searchbar";
-import SearchResult from "@/components/search/search_web/webresult";
+import SearchResult from "@/components/search/search_img/imgresult";
 import { useEffect, useState } from "react";
-import { WebResult } from "@/lib/types";
+import { ImageResult } from "@/lib/types";
 import Pagination from "@/components/pagination";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
   const link = `/search/image?query=${query}`;
   const index = Number(searchParams.get("start") ?? 1);
 
-  const [result, setResult] = useState<WebResult>();
+  const [result, setResult] = useState<ImageResult>();
   const [pages, setPages] = useState(0);
   useEffect(() => {
     async function fetchData() {
