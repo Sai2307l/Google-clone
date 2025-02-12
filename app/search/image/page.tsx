@@ -17,7 +17,7 @@ export default function Home() {
   const [pages, setPages] = useState(0);
   useEffect(() => {
     async function fetchData() {
-      const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.NEXT_PUBLIC_API_KEY}&cx=${process.env.NEXT_PUBLIC_CX}&q=${query}&start=${index}`;
+      const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.NEXT_PUBLIC_API_KEY}&cx=${process.env.NEXT_PUBLIC_CX}&q=${query}&start=${index}&searchType=image`;
 
       if (!query) return;
       await fetch(url)
